@@ -17,6 +17,19 @@ color: var(--primary-text-color);
    
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .container {
 margin-left: auto;
 margin-right: auto;
@@ -175,6 +188,7 @@ color: var(--accent-color-OCEAN);
     border-radius: 4px;
     color: var(--white);
     background-color: var(--normal-color-IRIS);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -192,7 +206,7 @@ color: var(--accent-color-OCEAN);
 }
 
 
-/* Секция подход к работе/approach to work */
+/*-------------------------- Секция подход к работе/approach to work -------------------------*/
 .work {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -332,12 +346,12 @@ align-items: center;
 }
 
 .team-subtitle {
-    color: var(--title-text-color);
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     text-align: center;
+    color: var(--title-text-color);
 }
 
 .team-text {
@@ -507,6 +521,7 @@ background-color: var(--footer-hover-social);
 
 .end-social {
     width: 208px;
+    margin-right: 80px;
 }
 
 .end-title {
@@ -536,6 +551,66 @@ background-color: var(--footer-hover-social);
 .end-icon {
     width: 24px;
     height: 24px;
+}
+
+.end-email {
+    width: 453px;
+}
+
+.end-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.end-input {
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+    width: 264px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: transparent;
+    padding-left: 16px;
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.end-input:focus, .end-input:hover {
+    border-color: var(--white);
+}
+
+.end-email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 24px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--normal-color-IRIS);
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.end-email-btn:hover, .end-email-btn:focus {
+    background-color: var(--accent-color-OCEAN);
+}
+
+.end-btn-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--white);
+}
+
+.email-end {
+    fill: var(--white);
 }
 
 /* ---------------------------Modal window ---------------------------------*/
@@ -576,6 +651,20 @@ background-color: var(--footer-hover-social);
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #E7E9FC;
     border-radius: 50%;
+    transition-property: background-color, border-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover, .modal-close-btn:focus {
+    border: 2px solid var(--accent-color-OCEAN);
+    fill: var(--accent-color-OCEAN);
+}
+
+.modal-close-btn:active {
+    background-color: var(--accent-color-OCEAN);
+    border: none;
+    fill: #F4F4FD;
 }
 
 .modal-close {
@@ -587,6 +676,146 @@ background-color: var(--footer-hover-social);
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+}
+
+.modal-titel {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5x;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
+
+.modal-desc {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    padding-left: 38px;
+    margin-bottom: 8px;
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus, .modal-input:hover {
+    border-color: var(--normal-color-IRIS);
+}
+
+.modal-input:focus + .modal-icon {
+    fill: var(--normal-color-IRIS);
+}
+
+.modal-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-input::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-textare {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    resize: none;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textare::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-textare:focus, .modal-textare:hover {
+    border-color: var(--normal-color-IRIS);
+}
+
+.chek-agree {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #757575;
+    margin-bottom: 24px;
+} 
+
+.chek-agree span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid var(--title-text-color);
+    border-radius: 2px;
+    margin-right: 8px;
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-chek:checked + .chek-agree span {
+    background-color: var(--accent-color-OCEAN);
+    border: none;
+    fill: #F4F4FD;
+}
+
+.input-chek:focus +.chek-agree span {
+    border-color: var(--accent-color-OCEAN);
+}
+
+.modal-send-btn {
+    display: block;
+    margin: auto;
+    width: 169px;
+    height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--normal-color-IRIS);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-send-btn:hover, .modal-send-btn:focus {
+    background-color: var(--accent-color-OCEAN);
 }
 
 /* ---------------------- Portfolio----------------------- */
